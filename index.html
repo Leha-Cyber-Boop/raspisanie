@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание</title>
+</head>
+<style>
+    body {
+        color: white;
+        /* Все текст белый */
+    }
+
+    .table-wrapper {
+        overflow-x: auto;
+        /* Горизонтальный скролл на маленьких экранах */
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        background: #222222;
+        table-layout: fixed;
+        border-collapse: collapse;
+        /* Улучшает вид */
+    }
+
+    .narrow-col {
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+        width: 5%;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        border: 1px solid #394eac;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 50px;
+        /* Минимальная ширина, чтобы не сжималось слишком сильно */
+    }
+
+    th:nth-child(1),
+    td:nth-child(1) {
+        width: 5%;
+    }
+
+    th:nth-child(2),
+    td:nth-child(2) {
+        width: 20%;
+    }
+
+    th:nth-child(3),
+    td:nth-child(3) {
+        width: 65%;
+    }
+
+    th:nth-child(4),
+    td:nth-child(4) {
+        width: 10%;
+    }
+
+    /* Медиа-запрос для экранов меньше 768px (мобильные) */
+    @media (max-width: 768px) {
+
+        th:nth-child(1),
+        td:nth-child(1) {
+            width: 10%;
+            /* Увеличиваем для лучшей читаемости */
+        }
+
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 25%;
+        }
+
+        th:nth-child(3),
+        td:nth-child(3) {
+            width: 50%;
+            /* Уменьшаем широкий столбец */
+        }
+
+        th:nth-child(4),
+        td:nth-child(4) {
+            width: 15%;
+        }
+
+        th,
+        td {
+            font-size: 12px;
+            /* Уменьшаем шрифт для мобильных */
+            padding: 5px;
+            /* Меньше отступов */
+        }
+
+        /* Опционально: Сделать таблицы стековыми (вертикальными) на очень маленьких экранах */
+        /* thead { display: none; } */
+        /* Скрыть заголовки */
+        /* tr { display: block; margin-bottom: 10px; } */
+        /* td { display: block; text-align: left; } */
+        /* td:before { content: attr(data-label); font-weight: bold; display: block; } */
+        /* Добавьте data-label в HTML для заголовков */
+    }
+
+    /* Для экранов меньше 480px (маленькие мобильные) */
+    @media (max-width: 480px) {
+
+        th:nth-child(3),
+        td:nth-child(3) {
+            width: 40%;
+            /* Ещё больше адаптируем */
+        }
+    }
+</style>
+
+<body>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th class="narrow-col">№ Пары</th>
+                    <th>Время занятия</th>
+                    <th class="narrow-col">Понедельник</th>
+                    <th>Ауд.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="narrow-col"></td>
+                    <td>8:40-9:25</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">1</td>
+                    <td>9:30-11:00</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">2</td>
+                    <td>11:20-12:50</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">3</td>
+                    <td>13:20-14:50</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">4</td>
+                    <td>15:10-16:40</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">5</td>
+                    <td>17:00-18:30</td>
+                    <td>ОГСЭ 04 Физическая культура</td>
+                    <td>с/з</td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">6</td>
+                    <td>18:40-20:10</td>
+                    <td>МДК.02.01 Устройство автоматов и полуавтоматов<br>
+                        Кулешова Е.А.</td>
+                    <td>304</td>
+                </tr>
+                <tr>
+                    <td colspan="4">ул. Молдавская., д.5, к.5</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h1></h1>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th class="narrow-col">№ Пары</th>
+                    <th>Время занятия</th>
+                    <th>Вторник</th>
+                    <th>Ауд.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="narrow-col"></td>
+                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">1</td>
+                    <td>9:00-10:30</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">2</td>
+                    <td>10:50-12:20</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">3</td>
+                    <td>12:50-14:20</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">4</td>
+                    <td>14:40-16:10</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">5</td>
+                    <td>16:30-18:00</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">6</td>
+                    <td>18:10-19:40</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="4">ул. Молдавская., д.5, к.5</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h1></h1>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th class="narrow-col">№ Пары</th>
+                    <th>Время занятия</th>
+                    <th>Среда</th>
+                    <th>Ауд.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="narrow-col"></td>
+                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">1</td>
+                    <td>9:00-10:30</td>
+                    <td>МДК.01.02 Технология ремонта и наладки<br>автоматических линий
+                        и агрегатных станков<br>
+                        Кулешова Е.А.</td>
+                    <td>401</td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">2</td>
+                    <td>10:50-12:20</td>
+                    <td>МДК.02.01 Устройство автоматов и<br>полуавтоматов<br>
+                        Кулешова Е.А</td>
+                    <td>401</td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">3</td>
+                    <td>12:50-14:20</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">4</td>
+                    <td>14:40-16:10</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">5</td>
+                    <td>16:30-18:00</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">6</td>
+                    <td>18:10-19:40</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="4">ул. Молдавская., д.5, к.5</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h1></h1>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th class="narrow-col">№ Пары</th>
+                    <th>Время занятия</th>
+                    <th>Четверг</th>
+                    <th>Ауд.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="narrow-col"></td>
+                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">1</td>
+                    <td>9:00-10:30</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">2</td>
+                    <td>10:50-12:20</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">3</td>
+                    <td>12:50-14:20</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">4</td>
+                    <td>14:40-16:10</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">5</td>
+                    <td>16:30-18:00</td>
+                    <td>МДК.01.03 Машиностроительное черчение<br>
+                        Сысоева Л.М.</td>
+                    <td>114</td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">6</td>
+                    <td>18:10-19:40</td>
+                    <td>МДК.01.03 Машиностроительное черчение<br>
+                        Сысоева Л.М.</td>
+                    <td>114</td>
+                </tr>
+                <tr>
+                    <td colspan="4">ул. Молдавская., д.5, к.5</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h1></h1>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th class="narrow-col">№ Пары</th>
+                    <th>Время занятия</th>
+                    <th>Пятница</th>
+                    <th>Ауд.</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="narrow-col"></td>
+                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">1</td>
+                    <td>9:00-10:30</td>
+                    <td>МДК.01.01 Устройство автоматических линий и<br>агрегатных станков<br>
+                        Кулешова Е.А.</td>
+                    <td>201</td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">2</td>
+                    <td>10:50-12:20</td>
+                    <td>МДК.01.01 Устройство автоматических линий и<br>агрегатных станков<br>
+                        Кулешова Е.А.</td>
+                    <td>201</td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">3</td>
+                    <td>12:50-14:20</td>
+                    <td>МДК.01.01 Устройство автоматических линий и<br>агрегатных станков<br>
+                        Кулешова Е.А.</td>
+                    <td>201</td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">4</td>
+                    <td>14:40-16:10</td>
+                    <td>ОГСЭ 03 Иностранный язык в профессиональной<br>деятельности<br>
+                        Амахина С.Р.</td>
+                    <td>201</td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">5</td>
+                    <td>16:30-18:00</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="narrow-col">6</td>
+                    <td>18:10-19:40</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="4">ул. Молдавская., д.5, к.5</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
